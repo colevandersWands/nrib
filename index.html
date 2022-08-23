@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style></style>
+  </head>
+
+  <body>
+    <img id="fake-download" src="" />
+
+    <script>
+      const urlFromCode = (code = "") =>
+        `https://res.cloudinary.com/dmbutdgsi/${decodeURIComponent(
+          atob(code)
+        )}.png`;
+
+      const encodedName = new URLSearchParams(window.location.search).get(
+        "you"
+      );
+      console.log(encodedName);
+
+      const imgSrc = urlFromCode(encodedName);
+
+      document.getElementById("fake-download").src = imgSrc;
+    </script>
+  </body>
+</html>
