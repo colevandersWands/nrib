@@ -91,4 +91,4 @@ const init = (imgUrl) => {
   }
 };
 
-export { init };
+export default init;

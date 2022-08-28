@@ -1,11 +1,9 @@
-import { init as initShare } from "./shareon.js";
+import initShare from "./shareon.js";
 
-const urlFromCode = (code = "") =>
-  `https://res.cloudinary.com/dmbutdgsi/${decodeURIComponent(atob(code))}.png`;
-
-const imgSrc = urlFromCode(
-  new URLSearchParams(window.location.search).get("you")
-);
+// atob so it looks even more cryptic, not for security
+const imgSrc = `https://res.cloudinary.com/dmbutdgsi/${decodeURIComponent(
+  atob(new URLSearchParams(window.location.search).get("you"))
+)}.png`;
 
 document.getElementById("fake-download").src = imgSrc;
 
