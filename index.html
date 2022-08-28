@@ -4,26 +4,32 @@
     <meta charset="utf-8" />
     <title></title>
 
-    <style></style>
+    <link rel="stylesheet" href="./src/shareon.css" />
   </head>
 
   <body>
+    <div
+      class="shareon"
+      data-title="Shareon — lightweight, stylish, and ethical share buttons"
+      style="text-align: center"
+    >
+      <a class="facebook"></a>
+      <a class="linkedin"></a>
+      <a class="mastodon" data-via="@kytta@fosstodon.org"></a>
+      <a class="messenger" data-fb-app-id="3619024578167617"></a>
+      <a class="odnoklassniki"></a>
+      <a class="pinterest"></a>
+      <a class="pocket"></a>
+      <a class="reddit"></a>
+      <a class="telegram"></a>
+      <a class="twitter" data-via="KyttaWasHere"></a>
+      <a class="viber"></a>
+      <a class="vkontakte"></a>
+      <a class="whatsapp"></a>
+    </div>
+
     <img id="fake-download" src="" />
 
-    <script>
-      const urlFromCode = (code = "") =>
-        `https://res.cloudinary.com/dmbutdgsi/${decodeURIComponent(
-          atob(code)
-        )}.png`;
-
-      const encodedName = new URLSearchParams(window.location.search).get(
-        "you"
-      );
-      console.log(encodedName);
-
-      const imgSrc = urlFromCode(encodedName);
-
-      document.getElementById("fake-download").src = imgSrc;
-    </script>
+    <script type="module" src="./src/init.js"></script>
   </body>
 </html>
